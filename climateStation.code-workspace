@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "climateStation",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"server.h": "c"
+		}
+	}
+}

@@ -10,9 +10,10 @@ DHT22Sensor *dht22Sensor;
 void setup() {
     Serial.begin(9600);
 
-    server = new CSServer();
     co2Sensor = new Co2Sensor();
     dht22Sensor = new DHT22Sensor();
+
+    server = new CSServer(dht22Sensor, co2Sensor);
 
     co2Sensor->printFirmwareVersionToSerial();
     dht22Sensor->printSensorInfoToSerial();

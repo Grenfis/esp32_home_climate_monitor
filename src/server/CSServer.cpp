@@ -1,5 +1,6 @@
 #include "CSServer.hpp"
 #include <ArduinoJson.h>
+#include "web.h"
 
 #define PORT 80
 #define SSID "Ucom7632_2.4G"
@@ -36,7 +37,15 @@ void CSServer::init() {
 
 void CSServer::registerRoutes() {
     _server->on("/", HTTP_GET, [](AsyncWebServerRequest *request){
-        request->send(200, "text/plain", "Welcome to home climate station");
+        request->send(200, "text/html", index_html);
+    });
+
+    _server->on("/static/style.css", HTTP_GET, [](AsyncWebServerRequest *request){
+        request->send(200, "text/css", main_css);
+    });
+
+    _server->on("/static/script.js", HTTP_GET, [](AsyncWebServerRequest *request){
+        request->send(200, "text/javascript", main_js);
     });
 
     _server->on("/api/dashboard", HTTP_GET, [this](AsyncWebServerRequest *request){

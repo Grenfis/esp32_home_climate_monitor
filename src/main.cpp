@@ -14,12 +14,9 @@ void setup() {
     dht22Sensor = new DHT22Sensor();
 
     server = new CSServer(dht22Sensor, co2Sensor);
-
-    co2Sensor->printFirmwareVersionToSerial();
-    dht22Sensor->printSensorInfoToSerial();
 }
 
 void loop() {
-    co2Sensor->update(true);
-    dht22Sensor->update(true);
+    co2Sensor->update();
+    dht22Sensor->update();
 }

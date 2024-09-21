@@ -1,6 +1,6 @@
 #include "dht22Sensor.hpp"
 
-#define DHT_PIN 13
+#define DHT_PIN GPIO_NUM_35
 #define DHT_TYPE DHT22
 
 DHT22Sensor::DHT22Sensor() {

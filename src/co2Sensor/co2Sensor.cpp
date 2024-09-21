@@ -1,8 +1,8 @@
 #include "co2Sensor.hpp"
 
 #define TXD_PIN GPIO_NUM_17
-#define RXD_PIN GPIO_NUM_16
-#define UART_NUM 2
+#define RXD_PIN GPIO_NUM_18
+#define UART_NUM 1
 #define BAUDRATE 9600
 
 #define UPDATE_PERIOD 2000
